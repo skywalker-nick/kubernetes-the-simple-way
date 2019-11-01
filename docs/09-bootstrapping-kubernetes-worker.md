@@ -71,14 +71,14 @@ $ sudo mkdir -p \
 Install the worker binaries:
 
 ```
-mkdir containerd
-tar -xvf crictl-v1.15.0-linux-amd64.tar.gz
-tar -xvf containerd-1.2.9.linux-amd64.tar.gz -C containerd
-sudo tar -xvf cni-plugins-linux-amd64-v0.8.2.tgz -C /opt/cni/bin/
-sudo cp runc.amd64 runc
-chmod +x crictl kubectl kube-proxy kubelet runc
-sudo cp crictl kubectl kube-proxy kubelet runc /usr/local/bin/
-sudo cp containerd/bin/* /bin/
+$ mkdir containerd
+$ tar -xvf crictl-v1.15.0-linux-amd64.tar.gz
+$ tar -xvf containerd-1.2.9.linux-amd64.tar.gz -C containerd
+$ sudo tar -xvf cni-plugins-linux-amd64-v0.8.2.tgz -C /opt/cni/bin/
+$ sudo cp runc.amd64 runc
+$ chmod +x crictl kubectl kube-proxy kubelet runc
+$ sudo cp crictl kubectl kube-proxy kubelet runc /usr/local/bin/
+$ sudo cp containerd/bin/* /bin/
 ```
 
 ### Configure CNI Networking
@@ -238,7 +238,7 @@ $ sudo cp ../configs/kubelet.service /etc/systemd/system/
 ### Configure the Kubernetes Proxy
 
 ```
-sudo cp ../configs/kube-proxy.kubeconfig /var/lib/kube-proxy/kubeconfig
+$ sudo cp ../configs/kube-proxy.kubeconfig /var/lib/kube-proxy/kubeconfig
 ```
 
 Create the `kube-proxy-config.yaml` configuration file:
@@ -302,3 +302,5 @@ $ kubectl get nodes --kubeconfig admin.kubeconfig
 NAME     STATUS   ROLES    AGE   VERSION
 worker   Ready    <none>   24h   v1.15.3
 ```
+
+Next: [Configuring kubectl for Remote Access](10-configuring-kubectl.md)

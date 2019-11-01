@@ -55,3 +55,5 @@ You can change your own configuration from Host Network Manager in the menu of V
 ### Install Ubuntu Server
 
 Power on the two virtual machines and follow the steps of Installation UI. Most of the questions are straightforward. Please make sure to choose OpenSSH Server which enables SSH connection from your physical machine to the virtual machines.
+
+Next: [Installing the Client Tools](02-install-client-tools.md)

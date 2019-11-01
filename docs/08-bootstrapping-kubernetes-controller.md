@@ -4,7 +4,9 @@ In this page you will bootstrap the Kubernetes control plane. The following comp
 
 ## Prerequisites
 
-Kubernetes needs two user-defined network segments for internal usage. One is POD IP Range and the other is Cluster IP Range. According to Kubernetes' design, the internal network is a flat network and all allocated IP should be directly accessed from point to point. In this tutorial, because we only have one worker node, all the internal connectivity happens inside the localhost. It simplies the external routing network configuration. Please keep in mind when you try to bootstrap multi-node deployment, all the virtual IPs allocated by Kubernetes should be directly routed inside your physical network infrastructure, by either L3 routing or overlay network.
+Kubernetes needs two user-defined network segments for internal usage. One is POD IP Range and the other is Cluster IP Range. According to Kubernetes' design, the internal network is a flat network and all allocated IP should be directly accessed from point to point. In this tutorial, because we only have one worker node, all the internal connectivity happens inside the localhost. It simplifies the external routing network configuration. Please keep in mind when you try to bootstrap multi-node deployment, all the virtual IPs allocated by Kubernetes should be directly routed inside your physical network infrastructure, by either L3 routing or overlay network.
+
+For more information, here is a great article [Understanding Kubernetes Networking Model](https://sookocheff.com/post/kubernetes/understanding-kubernetes-networking-model/).
 
 Our POD IP Range in this tutorial is:
 ```
@@ -194,9 +196,9 @@ $ sudo cp ../configs/kube-scheduler.service /etc/systemd/system
 ### Start the Controller Services
 
 ```
-sudo systemctl daemon-reload
-sudo systemctl enable kube-apiserver kube-controller-manager kube-scheduler
-sudo systemctl start kube-apiserver kube-controller-manager kube-scheduler
+$ sudo systemctl daemon-reload
+$ sudo systemctl enable kube-apiserver kube-controller-manager kube-scheduler
+$ sudo systemctl start kube-apiserver kube-controller-manager kube-scheduler
 ```
 
 > Allow up to 10 seconds for the Kubernetes API service to fully initialize.
@@ -279,7 +281,7 @@ ok
 Make a HTTP request for the Kubernetes version info:
 
 ```
-curl --cert ../certs/kubernetes.pem --key ../certs/kubernetes-key.pem --cacert ../certs/ca.pem https://192.168.56.101:6443/version
+$ curl --cert ../certs/kubernetes.pem --key ../certs/kubernetes-key.pem --cacert ../certs/ca.pem https://192.168.56.101:6443/version
 ```
 
 > output
@@ -297,3 +299,5 @@ curl --cert ../certs/kubernetes.pem --key ../certs/kubernetes-key.pem --cacert .
   "platform": "linux/amd64"
 }
 ```
+
+Next: [Bootstrapping the Kubernetes Worker Node](09-bootstrapping-kubernetes-worker.md)

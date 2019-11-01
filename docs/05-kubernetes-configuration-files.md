@@ -177,3 +177,5 @@ Copy the appropriate `kubelet` and `kube-proxy` kubeconfig files to each worker 
 ```
 $ scp worker.kubeconfig kube-proxy.kubeconfig username@192.168.56.102:/home/username/configs
 ```
+
+Next: [Generating the Data Encryption Config and Key](06-data-encryption-keys.md)

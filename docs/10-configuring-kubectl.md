@@ -60,3 +60,5 @@ $ kubectl get nodes
 NAME     STATUS   ROLES    AGE   VERSION
 worker   Ready    <none>   24h   v1.15.3
 ```
+
+Next: [Testing Kubernetes API and Deploying the DNS Add-on](11-dns-service.md)

@@ -101,3 +101,5 @@ $ sudo ETCDCTL_API=3 etcdctl member list \
 ```
 8e9e05c52164694d, started, kubernetes, http://localhost:2380, https://192.168.56.101:2379, false
 ```
+
+Next: [Bootstrapping the Kubernetes Control Plane](08-bootstrapping-kubernetes-controller.md)

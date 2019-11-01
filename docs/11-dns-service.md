@@ -1,6 +1,6 @@
-# Deploying the DNS Cluster Add-on
+# Testing Kubernetes API and Deploying the DNS Add-on
 
-In this page you will deploy the [DNS add-on](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/) which provides DNS based service discovery, backed by [CoreDNS](https://coredns.io/), to applications running inside the Kubernetes cluster.
+In this page you will use Kubernetes API to deploy the [DNS add-on](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/) which provides DNS based service discovery, backed by [CoreDNS](https://coredns.io/), to applications running inside the Kubernetes cluster.
 
 ## Prerequisites
 
@@ -15,7 +15,7 @@ $ cd ~/configs
 Deploy the `coredns` cluster add-on:
 
 ```
-cat > coredns.yaml <<EOF
+$ cat > coredns.yaml <<EOF
 apiVersion: v1
 kind: ServiceAccount
 metadata:
@@ -203,7 +203,7 @@ EOF
 ```
 
 ```
-kubectl apply -f coredns.yaml
+$ kubectl apply -f coredns.yaml
 ```
 
 > output

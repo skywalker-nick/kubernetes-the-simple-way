@@ -5,7 +5,7 @@
 Ubuntu Server 19.10 uses [netplan.io](https://netplan.io/examples) to manage the local network environment. First, we disable the cloud-init auto-configuration.
 
 ```
-cat > /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg << EOF
+$ cat <<EOF | sudo tee /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg
 network: {config: disabled}
 EOF
 ```
@@ -37,8 +37,9 @@ In the above output, the enp0s3 with IPv4 address 10.0.2.15 is NAT network inter
 
 Run the following command on kube-controller machine, and please double-check the network interface name:
 ```
-sudo rm /etc/netplan/*.*
-cat <<EOF | sudo tee /etc/netplan/50-default.yaml
+$ sudo rm /etc/netplan/*.*
+
+$ cat <<EOF | sudo tee /etc/netplan/50-default.yaml
 network:
     ethernets:
         enp0s3:
@@ -48,13 +49,15 @@ network:
             - 192.168.56.101/24
     version: 2
 EOF
-sudo netplan apply
+
+% sudo netplan apply
 ```
 
 Run the following command on kube-worker machine, and please double-check the network interface name:
 ```
-sudo rm /etc/netplan/*.*
-cat <<EOF | sudo tee /etc/netplan/50-default.yaml
+$ sudo rm /etc/netplan/*.*
+
+$ cat <<EOF | sudo tee /etc/netplan/50-default.yaml
 network:
     ethernets:
         enp0s3:
@@ -64,7 +67,8 @@ network:
             - 192.168.56.102/24
     version: 2
 EOF
-sudo netplan apply
+
+$ sudo netplan apply
 ```
 
 ## Set up Hostname
@@ -72,13 +76,13 @@ sudo netplan apply
 On kube-controller:
 
 ```
-cat <<EOF | sudo tee /etc/hostname
+$ cat <<EOF | sudo tee /etc/hostname
 kubernetes
 EOF
 ```
 
 ```
-cat <<EOF | sudo tee /etc/hosts
+$ cat <<EOF | sudo tee /etc/hosts
 127.0.0.1 localhost
 192.168.56.101 kubernetes
 192.168.56.102 worker
@@ -88,13 +92,13 @@ EOF
 On kube-worker:
 
 ```
-cat <<EOF | sudo tee /etc/hostname
+$ cat <<EOF | sudo tee /etc/hostname
 worker
 EOF
 ```
 
 ```
-cat <<EOF | sudo tee /etc/hosts
+$ cat <<EOF | sudo tee /etc/hosts
 127.0.0.1 localhost
 192.168.56.101 kubernetes
 192.168.56.102 worker
@@ -112,3 +116,5 @@ Start PowerShell, run `ssh username@192.168.56.101` to connect to kube-controlle
 ### Linux
 
 Start any terminal application, and run the exact same command as described above.
+
+Next: [Provisioning the CA and Generating TLS Certificates](04-certificate-authority.md)

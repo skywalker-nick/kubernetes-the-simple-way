@@ -370,3 +370,5 @@ $ scp ca.pem worker-key.pem worker.pem username@192.168.56.102:/home/username/ce
 ```
 
 > The `kube-proxy`, `kube-controller-manager`, `kube-scheduler`, and `kubelet` client certificates will be used to generate client authentication configuration files.
+
+Next: [Generating Kubernetes Configuration Files for Authentication](05-kubernetes-configuration-files.md)

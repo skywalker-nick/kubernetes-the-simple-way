@@ -45,3 +45,5 @@ Copy the `encryption-config.yaml` encryption config file to each controller inst
 ```
 $ scp encryption-config.yaml username@192.168.56.102:/home/username/configs
 ```
+
+Next: [Bootstrapping the etcd service](07-bootstrapping-etcd.md)

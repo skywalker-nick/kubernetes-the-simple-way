@@ -17,3 +17,17 @@ Kubernetes The Simple Way is a learning guide for one-master-one-worker deployme
 * [coredns](https://github.com/coredns/coredns) v1.6.3
 * [cni](https://github.com/containernetworking/cni) v0.7.1
 * [etcd](https://github.com/coreos/etcd) v3.4.0
+
+## Steps
+
+* [Prerequisites](docs/01-prerequisites.md)
+* [Installing the Client Tools](docs/02-install-client-tools.md)
+* [Configuring Ubuntu](docs/03-configure-ubuntu.md)
+* [Provisioning the CA and Generating TLS Certificates](docs/04-certificate-authority.md)
+* [Generating Kubernetes Configuration Files for Authentication](docs/05-kubernetes-configuration-files.md)
+* [Generating the Data Encryption Config and Key](docs/06-data-encryption-keys.md)
+* [Bootstrapping the etcd service](docs/07-bootstrapping-etcd.md)
+* [Bootstrapping the Kubernetes Control Plane](docs/08-bootstrapping-kubernetes-controller.md)
+* [Bootstrapping the Kubernetes Worker Node](docs/09-bootstrapping-kubernetes-worker.md)
+* [Configuring kubectl for Remote Access](docs/10-configuring-kubectl.md)
+* [Testing Kubernetes API and Deploying the DNS Add-on](docs/11-dns-service.md)
