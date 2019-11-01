@@ -10,17 +10,17 @@ The `cfssl` and `cfssljson` command line utilities will be used to provision a [
 Download and install `cfssl` and `cfssljson`:
 
 ```
-wget -q --show-progress --https-only --timestamping \
+$ wget -q --show-progress --https-only --timestamping \
   https://storage.googleapis.com/kubernetes-the-hard-way/cfssl/linux/cfssl \
   https://storage.googleapis.com/kubernetes-the-hard-way/cfssl/linux/cfssljson
 ```
 
 ```
-chmod +x cfssl cfssljson
+$ chmod +x cfssl cfssljson
 ```
 
 ```
-sudo mv cfssl cfssljson /usr/local/bin/
+$ sudo cp cfssl cfssljson /usr/local/bin/
 ```
 
 ### Verification
@@ -28,7 +28,7 @@ sudo mv cfssl cfssljson /usr/local/bin/
 Verify `cfssl` and `cfssljson` version 1.3.4 or higher is installed:
 
 ```
-cfssl version
+$ cfssl version
 ```
 
 > output
@@ -40,8 +40,11 @@ Runtime: go1.13
 ```
 
 ```
-cfssljson --version
+$ cfssljson --version
 ```
+
+> output
+
 ```
 Version: 1.3.4
 Revision: dev
@@ -53,15 +56,15 @@ Runtime: go1.13
 The `kubectl` command line utility is used to interact with the Kubernetes API Server. Download and install `kubectl` from the official release binaries:
 
 ```
-wget https://storage.googleapis.com/kubernetes-release/release/v1.15.3/bin/linux/amd64/kubectl
+$ wget https://storage.googleapis.com/kubernetes-release/release/v1.15.3/bin/linux/amd64/kubectl
 ```
 
 ```
-chmod +x kubectl
+$ chmod +x kubectl
 ```
 
 ```
-sudo mv kubectl /usr/local/bin/
+$ sudo cp kubectl /usr/local/bin/
 ```
 
 ### Verification
@@ -69,7 +72,7 @@ sudo mv kubectl /usr/local/bin/
 Verify `kubectl` version 1.15.3 or higher is installed:
 
 ```
-kubectl version --client
+$ kubectl version --client
 ```
 
 > output
