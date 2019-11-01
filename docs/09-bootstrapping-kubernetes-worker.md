@@ -1,4 +1,4 @@
-# Bootstrapping the Kubernetes Worker Nodes
+# Bootstrapping the Kubernetes Worker Node
 
 In this page you will bootstrap single-node Kubernetes worker. The following components will be installed on each node: [runc](https://github.com/opencontainers/runc), [container networking plugins](https://github.com/containernetworking/cni), [containerd](https://github.com/containerd/containerd), [kubelet](https://kubernetes.io/docs/admin/kubelet), and [kube-proxy](https://kubernetes.io/docs/concepts/cluster-administration/proxies).
 
