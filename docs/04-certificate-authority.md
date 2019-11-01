@@ -303,14 +303,14 @@ $ cfssl gencert \
   -ca=ca.pem \
   -ca-key=ca-key.pem \
   -config=ca-config.json \
-  -hostname=192.168.56.101,127.0.0.1,${KUBERNETES_HOSTNAMES} \
+  -hostname=192.168.65.1,127.0.0.1,${KUBERNETES_HOSTNAMES} \
   -profile=kubernetes \
   kubernetes-csr.json | cfssljson -bare kubernetes
 
 }
 ```
 
-> The Kubernetes API server is automatically assigned the `kubernetes` internal dns name, which will be linked to the first IP address (`192.168.56.101`) from the address range (`192.168.56.0/24`) reserved for internal cluster services.
+> The Kubernetes API server is automatically assigned the `kubernetes` internal dns name, which will be linked to the first IP address (`192.168.65.1`) from the address range (`192.168.65.0/24`) reserved for internal cluster services.
 
 Results:
 
